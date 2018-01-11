@@ -1,0 +1,32 @@
+﻿@model IEnumerable<FinalB.Models.Studio>
+
+@{
+    ViewBag.Title = "Movie Studios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movie Studios</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped table-hover sortable ">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.Name, "Details", new { id = item.StudioID })
+        </td>
+        <td>
+
+        </td>
+    </tr>
+}
+
+</table>
